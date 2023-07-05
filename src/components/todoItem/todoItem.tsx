@@ -11,19 +11,11 @@ type typeTodoItem = {
     createdAt: Date;
     updatedAt: Date;
     toggleTodo: (id: string, completed: boolean) => void
+    deleteTodo: (id: string) => void
 }
 
-async function deleteTodo(uuid: string) {
-    console.log(uuid)
 
-    // await prisma.todo.delete({
-    //     where: {
-    //         id: uuid,
-    //     },
-    // })
-}
-
-const TodoItem = ({ id, title, completed, createdAt, updatedAt, toggleTodo }: typeTodoItem) => {
+const TodoItem = ({ id, title, completed, createdAt, updatedAt, toggleTodo, deleteTodo }: typeTodoItem) => {
     return (
         <li className='flex justify-between my-5 py-5  border hover:bg-teal-900 transition-all ease-linear duration-100'>
             <div>
